@@ -56,6 +56,14 @@
     <Compile Include="Migrations\201706071721590_Atributes Added.Designer.cs">
       <DependentUpon>201706071721590_Atributes Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706071744455_Update through fluent API.cs" />
+    <Compile Include="Migrations\201706071744455_Update through fluent API.Designer.cs">
+      <DependentUpon>201706071744455_Update through fluent API.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706071751371_test.cs" />
+    <Compile Include="Migrations\201706071751371_test.Designer.cs">
+      <DependentUpon>201706071751371_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -75,6 +83,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706071721590_Atributes Added.resx">
       <DependentUpon>201706071721590_Atributes Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706071744455_Update through fluent API.resx">
+      <DependentUpon>201706071744455_Update through fluent API.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706071751371_test.resx">
+      <DependentUpon>201706071751371_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

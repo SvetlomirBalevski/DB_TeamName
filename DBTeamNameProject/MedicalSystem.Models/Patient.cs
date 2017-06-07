@@ -14,7 +14,7 @@ namespace MedicalSystem.Models
 
         public string Name { get; set; }
 
-        public string Satus { get; set; }
+        public string Status { get; set; }
 
         public virtual ICollection<Doctor> Doctors { get; set; }
 
