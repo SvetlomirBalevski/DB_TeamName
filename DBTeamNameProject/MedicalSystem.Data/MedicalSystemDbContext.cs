@@ -10,6 +10,14 @@
         {
         }
 
+        //protected override void OnModelCreating(
+        //   DbModelBuilder modelBuilder)
+        //{
+        //    this.OnGenreModelCreateing(modelBuilder);
+
+        //    base.OnModelCreating(modelBuilder);
+        //}
+
         public DbSet<Doctor> Doctors { get; set; }
 
         public DbSet<Hospital> Hospitals { get; set; }
