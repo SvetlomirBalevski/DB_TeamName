@@ -2,16 +2,13 @@
 
 namespace MedicalSystem.Models
 {
-    public class Specialty
+    public class Patient
     {
-        public Specialty()
-        {
-            this.Doctors = new HashSet<Doctor>();
-        }
-
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public string Satus { get; set; }
 
         public virtual ICollection<Doctor> Doctors { get; set; }
     }
