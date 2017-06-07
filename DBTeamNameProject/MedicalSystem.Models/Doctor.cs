@@ -7,6 +7,7 @@ namespace MedicalSystem.Models
         public Doctor()
         {
             this.Patients = new HashSet<Patient>();
+            this.Diseases = new HashSet<Disease>();
         }
 
         public int Id { get; set; }
@@ -18,5 +19,7 @@ namespace MedicalSystem.Models
         public virtual Specialty Specialty { get; set; }
 
         public virtual ICollection<Patient> Patients { get; set; }
+
+        public virtual ICollection<Disease> Diseases { get; set; }
     }
 }
