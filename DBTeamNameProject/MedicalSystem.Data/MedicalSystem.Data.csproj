@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MedicalSystemDbContext.cs" />
+    <Compile Include="Migrations\201706071251270_Initial.cs" />
+    <Compile Include="Migrations\201706071251270_Initial.Designer.cs">
+      <DependentUpon>201706071251270_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -60,6 +64,11 @@
       <Project>{7298FE59-DE2C-462E-AFCE-D8E8EDC963D5}</Project>
       <Name>MedicalSystem.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706071251270_Initial.resx">
+      <DependentUpon>201706071251270_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,7 +3,7 @@ namespace MedicalSystem.Data.Migrations
     using MedicalSystem.Models;
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MedicalSystem.Data.MedicalSystemDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MedicalSystemDbContext>
     {
         public Configuration()
         {
