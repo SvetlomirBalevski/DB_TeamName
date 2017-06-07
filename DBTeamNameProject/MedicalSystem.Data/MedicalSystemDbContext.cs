@@ -1,13 +1,8 @@
-﻿using MedicalSystem.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MedicalSystem.Data
+﻿namespace MedicalSystem.Data
 {
+    using MedicalSystem.Models;
+    using System.Data.Entity;
+
     public class MedicalSystemDbContext : DbContext
     {
         public MedicalSystemDbContext()
