@@ -7,13 +7,13 @@ namespace MedicalSystem.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class test : IMigrationMetadata
+    public sealed partial class FluentApiconfigurationrefactoring : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(test));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FluentApiconfigurationrefactoring));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706071751371_test"; }
+            get { return "201706081518394_Fluent Api configuration refactoring"; }
         }
         
         string IMigrationMetadata.Source

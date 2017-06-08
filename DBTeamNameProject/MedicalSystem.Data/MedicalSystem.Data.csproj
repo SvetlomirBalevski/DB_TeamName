@@ -60,9 +60,9 @@
     <Compile Include="Migrations\201706071744455_Update through fluent API.Designer.cs">
       <DependentUpon>201706071744455_Update through fluent API.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706071751371_test.cs" />
-    <Compile Include="Migrations\201706071751371_test.Designer.cs">
-      <DependentUpon>201706071751371_test.cs</DependentUpon>
+    <Compile Include="Migrations\201706081518394_Fluent Api configuration refactoring.cs" />
+    <Compile Include="Migrations\201706081518394_Fluent Api configuration refactoring.Designer.cs">
+      <DependentUpon>201706081518394_Fluent Api configuration refactoring.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +87,8 @@
     <EmbeddedResource Include="Migrations\201706071744455_Update through fluent API.resx">
       <DependentUpon>201706071744455_Update through fluent API.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706071751371_test.resx">
-      <DependentUpon>201706071751371_test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706081518394_Fluent Api configuration refactoring.resx">
+      <DependentUpon>201706081518394_Fluent Api configuration refactoring.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

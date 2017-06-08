@@ -18,11 +18,10 @@ namespace MedicalSystem.Models
         [StringLength(40)]
         public string Name { get; set; }
 
-        [StringLength(40)]
+        [Required]
         public virtual Hospital Hospital { get; set; }
 
         [Required]
-        [StringLength(30)]
         public virtual Specialty Specialty { get; set; }
 
         public virtual ICollection<Patient> Patients { get; set; }

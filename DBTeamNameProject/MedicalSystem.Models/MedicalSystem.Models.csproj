@@ -54,7 +54,7 @@
     <Compile Include="Hospital.cs" />
     <Compile Include="Medicine.cs" />
     <Compile Include="Patient.cs" />
-    <Compile Include="PatientStatuses.cs" />
+    <Compile Include="Enums\PatientStatuses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specialty.cs" />
   </ItemGroup>

@@ -1,7 +1,9 @@
 ﻿namespace MedicalSystem.Data
 {
     using MedicalSystem.Models;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity;
+    using System.Data.Entity.Infrastructure.Annotations;
 
     public class MedicalSystemDbContext : DbContext
     {
@@ -13,46 +15,44 @@
         protected override void OnModelCreating(
            DbModelBuilder modelBuilder)
         {
-            this.OnGenreModelCreateing(modelBuilder);
+            this.OnPatientModelCreateing(modelBuilder);
+            this.OnSpecialtyModelCreateing(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }
 
-        private void OnGenreModelCreateing(DbModelBuilder modelBuilder)
+        private void OnSpecialtyModelCreateing(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Patient>()
-                .HasKey<int>(genre => genre.Id);
-
-            modelBuilder.Entity<Patient>()
-                .Property(patient => patient.Name)
-                .IsRequired()
-                .HasMaxLength(40);
-            
             modelBuilder.Entity<Specialty>()
                 .HasKey<int>(speciality => speciality.Id);
-                
+
 
             modelBuilder.Entity<Specialty>()
                 .Property(speciality => speciality.Name)
                 .IsRequired()
                 .HasMaxLength(30);
-                
+        }
 
-            //modelBuilder.Entity<Genre>()
-            //    .Property(genre => genre.Name)
-            //    .IsRequired();
+        private void OnPatientModelCreateing(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Patient>()
+                .HasKey<int>(patient => patient.Id);
 
+            modelBuilder.Entity<Patient>()
+                .Property(patient => patient.Name)
+                .IsRequired()
+                .HasMaxLength(40);
 
-            //modelBuilder.Entity<Genre>()
-            //    .Property(genre => genre.Name)
-            //    .HasColumnAnnotation(
-            //    "Index",
-            //    new IndexAnnotation(
-            //        new IndexAttribute("IX_Name")
-            //        {
-            //            IsUnique = true
-            //        }
-            //        ));
+            modelBuilder.Entity<Patient>()
+                .Property(patient => patient.Name)
+                .HasColumnAnnotation(
+                "Index",
+                new IndexAnnotation(
+                    new IndexAttribute("IX_Name")
+                    {
+                        IsUnique = false
+                    }
+                    ));
         }
 
         public DbSet<Doctor> Doctors { get; set; }

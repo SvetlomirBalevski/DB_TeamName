@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalSystem.Models
+namespace MedicalSystem.Models.Enums
 {
    public enum PatientStatuses
     {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MedicalSystem.Models.Enums;
+using System.Collections.Generic;
 
 namespace MedicalSystem.Models
 {
@@ -14,7 +15,7 @@ namespace MedicalSystem.Models
 
         public string Name { get; set; }
 
-        public string Status { get; set; }
+        public PatientStatuses Status { get; set; }
 
         public virtual ICollection<Doctor> Doctors { get; set; }
 
