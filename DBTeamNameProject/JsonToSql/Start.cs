@@ -7,19 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JsonToSql
+namespace MedicalSystem.JsonToSql
 {
     class Start
     {
         static void Main()
         {
-            using (StreamReader reader = new StreamReader("../../../JSON Examples/PatientJSON.json"))
-            {
-                string json = reader.ReadToEnd();
-                List<Patient> Patient = JsonConvert.DeserializeObject<List<Patient>>(json);
-            }
-
-            Console.WriteLine("Patient");
+            var add = new AddPatient("../../../JSON Examples/PatientJSON.json");   
         }
     }
 }
