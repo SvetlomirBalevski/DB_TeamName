@@ -20,6 +20,11 @@ namespace MedicalSystem.Data.Migrations
                     Description = "Universal analgesic",
                 }
             );
+            context.Specialty.AddOrUpdate(s => s.Name,
+          new Specialty
+          {
+              Name = "Rakiolog"
+          });
         }
     }
 }
