@@ -56,7 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddPatient.cs" />
+    <Compile Include="AddToSql.cs" />
+    <Compile Include="ReadDisease.cs" />
+    <Compile Include="ReadPatient.cs" />
     <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

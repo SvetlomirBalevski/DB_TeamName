@@ -2,25 +2,19 @@
 using MedicalSystem.Models.Enums;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MedicalSystem.JsonToSql
 {
-    public class AddPatient : DbContext
+    public class ReadPatient
     {
         private readonly Patient patient;
         private readonly string fileLocation;
 
-        public AddPatient(string fileLocation)
+        public ReadPatient(string fileLocation)
         {
             this.fileLocation = fileLocation;
             this.patient = ReadPatientFromFile();
-            AddPatientToSql(patient);
         }
 
         private Patient ReadPatientFromFile()
@@ -30,6 +24,7 @@ namespace MedicalSystem.JsonToSql
                 string json = reader.ReadToEnd();
                 var template = new
                 {
+                    Id = "",
                     Name = "",
                     Status = ""
                 };
@@ -37,8 +32,7 @@ namespace MedicalSystem.JsonToSql
 
                 var patientToAdd = new Patient();
                 patientToAdd.Name = deserialized.Name;
-
-                //patientToAdd.Status = Enum.GetNames(typeof(PatientStatuses)).Any(f => f.Equals(deserialized.Status));
+                patientToAdd.Id = int.Parse(deserialized.Id);
 
                 string[] enumValues = new string[] { "Healthy","Ill",
         "GettingBetter","GettingWorse","Dead","Simulant","Zombie","Newcommer"};
@@ -58,18 +52,16 @@ namespace MedicalSystem.JsonToSql
                 {
                     throw new ArgumentException("IncorrectPatient");
                 }
-                Console.WriteLine("PatientAdded");
-
                 return patientToAdd;
             }
         }
 
-        private void AddPatientToSql(Patient patientToAdd)
+        public Patient Patient
         {
-            //using (var context = new DbContext())
-            //{
-
-            //}
+            get
+            {
+                return this.patient;
+            }
         }
     }
 }

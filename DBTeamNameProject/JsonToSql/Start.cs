@@ -1,4 +1,5 @@
-﻿using MedicalSystem.Models;
+﻿using MedicalSystem.Data;
+using MedicalSystem.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,17 @@ namespace MedicalSystem.JsonToSql
     {
         static void Main()
         {
-            var add = new AddPatient("../../../JSON Examples/PatientJSON.json");   
+            var readedPatient = new ReadPatient("../../../JSON Examples/PatientJSON.json");
+
+            AddToSql.Patient(readedPatient.Patient);
+
+            Console.WriteLine("Patient Added");
+
+            var readedDisease = new ReadDisease("../../../JSON Examples/DiseaseJSON.json");
+
+            AddToSql.Disease(readedDisease.Disease);
+
+            Console.WriteLine("Disease added");
         }
     }
 }
