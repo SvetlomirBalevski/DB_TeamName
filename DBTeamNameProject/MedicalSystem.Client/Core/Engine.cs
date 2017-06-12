@@ -1,6 +1,7 @@
 ﻿using Bytes2you.Validation;
 using MedicalSystem.Client.Common.Exceptions;
 using MedicalSystem.Client.Core.Contracts;
+using MedicalSystem.Client.Core.Providers;
 using System;
 
 namespace MedicalSystem.Client.Core
@@ -12,8 +13,9 @@ namespace MedicalSystem.Client.Core
         private readonly IReader reader;
         private readonly IWriter writer;
         private readonly IParser parser;
+        private readonly iReportGenerator pdfGenerator;
 
-        public Engine(IReader reader, IWriter writer, IParser commandParser)
+        public Engine(IReader reader, IWriter writer, IParser commandParser, iReportGenerator generator)
         {
             Guard.WhenArgument(reader, "Reader provider").IsNull().Throw();
             Guard.WhenArgument(writer, "Writer provider").IsNull().Throw();
@@ -22,6 +24,7 @@ namespace MedicalSystem.Client.Core
             this.reader = reader;
             this.writer = writer;
             this.parser = commandParser;
+            this.pdfGenerator = generator;
         }
 
         public void Start()
@@ -40,6 +43,7 @@ namespace MedicalSystem.Client.Core
 
                     var executionResult = this.parser.ProcessCommand(commandAsString);
                     this.writer.WriteLine(executionResult);
+                    this.pdfGenerator.GeneratePdf(executionResult);
                 }
                 catch (UserValidationException ex)
                 {

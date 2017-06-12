@@ -16,8 +16,9 @@ namespace MedicalSystem.Client
             var reader = new ConsoleReader();
             var writer = new ConsoleWriter();
             var parser = new CommandParser(commandsFactory);
+            var generator = new pdfReportGenerator();
 
-            var engine = new Engine(reader, writer, parser);
+            var engine = new Engine(reader,writer, parser,generator);
             engine.Start();
         }
     }
