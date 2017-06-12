@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MedicalSystem.Models
@@ -27,5 +28,10 @@ namespace MedicalSystem.Models
         public virtual ICollection<Patient> Patients { get; set; }
 
         public virtual ICollection<Disease> Diseases { get; set; }
+
+        public override string ToString()
+        {
+            return this.Id + " | " + this.Name + " | " + this.Hospital.Name + " | " + this.Specialty.Name;
+        }
     }
 }
