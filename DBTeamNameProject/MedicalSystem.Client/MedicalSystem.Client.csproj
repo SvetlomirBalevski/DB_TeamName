@@ -55,6 +55,7 @@
     <Compile Include="Commands\Adding\CreateSpecialtyCommand.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Deleting\DeleteSpecialtyCommand.cs" />
+    <Compile Include="Commands\Listing\ListAllCommand.cs" />
     <Compile Include="Commands\Listing\ListSpecialtyCommand.cs" />
     <Compile Include="Commands\Updating\UpdateSpecialtyCommand.cs" />
     <Compile Include="Common\Exceptions\DatabaseValidationException.cs" />

@@ -2,20 +2,21 @@
 using MedicalSystem.Client.Commands.Contracts;
 using MedicalSystem.Client.Common.Exceptions;
 using MedicalSystem.Client.Core.Factories;
-using MedicalSystem.Data;
 using MedicalSystem.Data.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace MedicalSystem.Client.Commands.Listing
 {
-    public class ListSpecialtyCommand : ICommand
+    public class ListAllCommand : ICommand
     {
         private readonly IMedicalSystemFactory medicalSystemFactory;
         private readonly IMedicalSystemDbContext dbContext;
 
-        public ListSpecialtyCommand(IMedicalSystemFactory medicalSystemFactory, IMedicalSystemDbContext dbContext)
+        public ListAllCommand(IMedicalSystemFactory medicalSystemFactory, IMedicalSystemDbContext dbContext)
         {
             Guard.WhenArgument(medicalSystemFactory, "medicalSystemFactory cannot be null").IsNull().Throw();
             Guard.WhenArgument(dbContext, "dbContext cannot be null!").IsNull().Throw();
@@ -36,17 +37,14 @@ namespace MedicalSystem.Client.Commands.Listing
                 throw new UserValidationException("Some of the passed parameters are empty!");
             }
 
-            string specialtyName = parameters[0];
+            string tableName = parameters[0];
 
-            var specialty = dbContext.Specialty.FirstOrDefault(s => s.Name == specialtyName);
-
-            if (specialty != null)
+            switch (tableName)
             {
-                return specialty.ToString();
-            }
-            else
-            {
-                return "Specialty with given name does not exists!";
+                case "specialty":
+                    return string.Join("\n", dbContext.Specialty.ToList());
+                default:
+                    throw new UserValidationException($"There is no {tableName} table in database!");
             }
         }
     }

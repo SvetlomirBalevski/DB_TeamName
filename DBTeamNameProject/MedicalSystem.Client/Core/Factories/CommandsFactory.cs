@@ -31,6 +31,7 @@ namespace MedicalSystem.Client.Core.Factories
             {
                 case "addspecialty": return new CreateSpecialtyCommand(this.medicalSystemFactory, this.dbContext);
                 case "readspecialty": return new ListSpecialtyCommand(this.medicalSystemFactory, this.dbContext);
+                case "readall": return new ListAllCommand(this.medicalSystemFactory, this.dbContext);
                 case "updatespecialty": return new UpdateSpecialtyCommand(this.medicalSystemFactory, this.dbContext);
                 case "deletespecialty": return new DeleteSpecialtyCommand(this.medicalSystemFactory, this.dbContext);
                 default: throw new UserValidationException("The passed command is not valid!");

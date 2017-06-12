@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MedicalSystem.Models
 {
@@ -14,5 +15,14 @@ namespace MedicalSystem.Models
         public string Name { get; set; }
 
         public virtual ICollection<Doctor> Doctors { get; set; }
+
+        public override string ToString()
+        {
+            string doctors = this.Doctors.Count == 0 ?
+                    $"No doctors with {this.Name} specialty"
+                    : string.Join(" ", this.Doctors);
+
+            return this.Id + " | " + this.Name + "\n\t" + doctors;
+        }
     }
 }
