@@ -57,6 +57,7 @@
     <Compile Include="Enums\PatientStatuses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specialty.cs" />
+    <Compile Include="SQLiteModels\Continent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

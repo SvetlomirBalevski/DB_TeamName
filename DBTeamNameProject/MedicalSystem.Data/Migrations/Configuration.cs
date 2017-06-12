@@ -18,13 +18,13 @@ namespace MedicalSystem.Data.Migrations
                 {
                     Name = "Aspirin",
                     Description = "Universal analgesic",
-                }
-            );
+                });
+
             context.Specialty.AddOrUpdate(s => s.Name,
-          new Specialty
-          {
-              Name = "Rakiolog"
-          });
+                new Specialty
+                {
+                    Name = "Rakiolog"
+                });
         }
     }
 }
