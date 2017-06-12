@@ -1,11 +1,12 @@
 ﻿namespace MedicalSystem.Data
 {
+    using MedicalSystem.Data.Contracts;
     using MedicalSystem.Models;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure.Annotations;
 
-    public class MedicalSystemDbContext : DbContext
+    public class MedicalSystemDbContext : DbContext, IMedicalSystemDbContext
     {
         public MedicalSystemDbContext()
             : base("MedicalSystemDb")

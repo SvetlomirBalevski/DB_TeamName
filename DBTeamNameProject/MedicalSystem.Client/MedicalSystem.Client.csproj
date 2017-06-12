@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8BFA8431-1015-4571-BC66-A92753B72076}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MedicalSystem.Data</RootNamespace>
-    <AssemblyName>MedicalSystem.Data</AssemblyName>
+    <ProjectGuid>{31DF373B-0072-4D09-87F0-37E4B98E6F71}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MedicalSystem.Client</RootNamespace>
+    <AssemblyName>MedicalSystem.Client</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bytes2you.Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a7d501dd757e0442, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bytes2you.Validation.2.0.0.0\lib\portable-win+net40+sl40+wp+Xbox40\Bytes2you.Validation.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -47,25 +52,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IMedicalSystemDbContext.cs" />
-    <Compile Include="MedicalSystemDbContext.cs" />
-    <Compile Include="Migrations\201706071251270_Initial.cs" />
-    <Compile Include="Migrations\201706071251270_Initial.Designer.cs">
-      <DependentUpon>201706071251270_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706071721590_Atributes Added.cs" />
-    <Compile Include="Migrations\201706071721590_Atributes Added.Designer.cs">
-      <DependentUpon>201706071721590_Atributes Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706071744455_Update through fluent API.cs" />
-    <Compile Include="Migrations\201706071744455_Update through fluent API.Designer.cs">
-      <DependentUpon>201706071744455_Update through fluent API.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706081518394_Fluent Api configuration refactoring.cs" />
-    <Compile Include="Migrations\201706081518394_Fluent Api configuration refactoring.Designer.cs">
-      <DependentUpon>201706081518394_Fluent Api configuration refactoring.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Commands\Adding\CreateSpecialtyCommand.cs" />
+    <Compile Include="Commands\Contracts\ICommand.cs" />
+    <Compile Include="Commands\Deleting\DeleteSpecialtyCommand.cs" />
+    <Compile Include="Commands\Listing\ListSpecialtyCommand.cs" />
+    <Compile Include="Commands\Updating\UpdateSpecialtyCommand.cs" />
+    <Compile Include="Common\Exceptions\DatabaseValidationException.cs" />
+    <Compile Include="Common\Exceptions\UserValidationException.cs" />
+    <Compile Include="Core\Contracts\IEngine.cs" />
+    <Compile Include="Core\Contracts\IParser.cs" />
+    <Compile Include="Core\Contracts\IReader.cs" />
+    <Compile Include="Core\Contracts\IWriter.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Core\Factories\CommandsFactory.cs" />
+    <Compile Include="Core\Factories\ICommandsFactory.cs" />
+    <Compile Include="Core\Factories\IMedicalSystemFactory.cs" />
+    <Compile Include="Core\Factories\MedicalSystemFactory.cs" />
+    <Compile Include="Core\Providers\CommandParser.cs" />
+    <Compile Include="Core\Providers\ConsoleReader.cs" />
+    <Compile Include="Core\Providers\ConsoleWriter.cs" />
+    <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,24 +79,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MedicalSystem.Data\MedicalSystem.Data.csproj">
+      <Project>{8BFA8431-1015-4571-BC66-A92753B72076}</Project>
+      <Name>MedicalSystem.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MedicalSystem.Models\MedicalSystem.Models.csproj">
       <Project>{7298FE59-DE2C-462E-AFCE-D8E8EDC963D5}</Project>
       <Name>MedicalSystem.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706071251270_Initial.resx">
-      <DependentUpon>201706071251270_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706071721590_Atributes Added.resx">
-      <DependentUpon>201706071721590_Atributes Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706071744455_Update through fluent API.resx">
-      <DependentUpon>201706071744455_Update through fluent API.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706081518394_Fluent Api configuration refactoring.resx">
-      <DependentUpon>201706081518394_Fluent Api configuration refactoring.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Common\Contracts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
