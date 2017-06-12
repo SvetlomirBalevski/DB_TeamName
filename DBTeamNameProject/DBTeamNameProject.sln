@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalSystem.Models", "MedicalSystem.Models\MedicalSystem.Models.csproj", "{7298FE59-DE2C-462E-AFCE-D8E8EDC963D5}"
 EndProject
@@ -11,7 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalSystem.JsonToSql", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalSystem.Client", "MedicalSystem.Client\MedicalSystem.Client.csproj", "{31DF373B-0072-4D09-87F0-37E4B98E6F71}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalSystem.DataSQLite", "MedicalSystem.DataSQLite\MedicalSystem.DataSQLite.csproj", "{98689359-B938-43C3-A16E-8A927853924D}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalSystem.pdfReports", "MedicalSystem.pdfReports\MedicalSystem.pdfReports.csproj", "{4C55BA02-1B2A-4C6C-88F3-ED8949263FFC}"
+>>>>>>> 6fdea984329ec2e20d6f74d58466c8c9c34db9e1
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +39,17 @@ Global
 		{31DF373B-0072-4D09-87F0-37E4B98E6F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31DF373B-0072-4D09-87F0-37E4B98E6F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31DF373B-0072-4D09-87F0-37E4B98E6F71}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{98689359-B938-43C3-A16E-8A927853924D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{98689359-B938-43C3-A16E-8A927853924D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98689359-B938-43C3-A16E-8A927853924D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98689359-B938-43C3-A16E-8A927853924D}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{4C55BA02-1B2A-4C6C-88F3-ED8949263FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C55BA02-1B2A-4C6C-88F3-ED8949263FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C55BA02-1B2A-4C6C-88F3-ED8949263FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C55BA02-1B2A-4C6C-88F3-ED8949263FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 6fdea984329ec2e20d6f74d58466c8c9c34db9e1
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

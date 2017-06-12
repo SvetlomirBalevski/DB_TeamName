@@ -63,6 +63,7 @@
     <Compile Include="Core\Contracts\IEngine.cs" />
     <Compile Include="Core\Contracts\IParser.cs" />
     <Compile Include="Core\Contracts\IReader.cs" />
+    <Compile Include="Core\Contracts\iReportGenerator.cs" />
     <Compile Include="Core\Contracts\IWriter.cs" />
     <Compile Include="Core\Engine.cs" />
     <Compile Include="Core\Factories\CommandsFactory.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Core\Providers\CommandParser.cs" />
     <Compile Include="Core\Providers\ConsoleReader.cs" />
     <Compile Include="Core\Providers\ConsoleWriter.cs" />
+    <Compile Include="Core\Providers\pdfReportGenerator.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,6 +89,10 @@
     <ProjectReference Include="..\MedicalSystem.Models\MedicalSystem.Models.csproj">
       <Project>{7298FE59-DE2C-462E-AFCE-D8E8EDC963D5}</Project>
       <Name>MedicalSystem.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalSystem.pdfReports\MedicalSystem.pdfReports.csproj">
+      <Project>{4c55ba02-1b2a-4c6c-88f3-ed8949263ffc}</Project>
+      <Name>MedicalSystem.pdfReports</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
