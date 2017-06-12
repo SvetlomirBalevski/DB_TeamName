@@ -18,7 +18,7 @@ namespace MedicalSystem.Client
             var parser = new CommandParser(commandsFactory);
             var generator = new pdfReportGenerator();
 
-            var engine = new Engine(reader,writer, parser,generator);
+            var engine = new Engine(reader, writer, parser, generator);
             engine.Start();
         }
     }
